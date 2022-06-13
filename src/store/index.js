@@ -5,10 +5,13 @@ export default createStore({
   },
   getters: {
   },
-  mutations: {
-  },
   actions: {
   },
   modules: {
+  },
+  mutations: {
+    DATA_UPDATE(state, maj) {
+        this.state.data=maj;
+    }
   }
 })
