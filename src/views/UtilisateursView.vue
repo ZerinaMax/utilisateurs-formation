@@ -10,11 +10,10 @@ export default {
   name: 'UtilisateursView',
   components: {
     Utilisateurs, 
-    ModifierView
+    ModifierView,
   },
 }
 </script>
 
 <style scoped>
-
 </style>

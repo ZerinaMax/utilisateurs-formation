@@ -1,10 +1,10 @@
 <template>
   <nav>
     <img alt="Vue logo" src="logo-Id-Formation.png">
-    <div>
-    <router-link to="/">Accueil</router-link> 
-    <router-link to="/utilisateurs">Utilisateurs</router-link> 
-    <router-link to="/ajouter">Ajouter</router-link>
+    <div class="liens-router">
+      <router-link to="/">Accueil</router-link> 
+      <router-link to="/utilisateurs">Utilisateurs</router-link> 
+      <router-link to="/ajouter">Ajouter</router-link>
     </div>
   </nav>
   <router-view/>
@@ -31,6 +31,11 @@ export default {
 </script>
 
 <style scoped>
+*::before, *::after {     
+  box-sizing: border-box;     
+  margin: 0;      
+  padding: 0;     
+}
 img {
   width: 10%;
   border-radius: 20%;
@@ -39,26 +44,30 @@ img {
 
 nav {
   padding: 30px;
-  margin: auto;
-  height: auto;
   display: flex;
   justify-content: space-between;
-  background: grey;
+  background: #7C8D5B;
 }
 
-nav a {
+a {
+  display: flex;
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
   font-size: 1.5rem;
-	padding: 1rem 1.5rem;
-	background-color: rgb(197, 197, 238);
+	background-color: #4E7B7F;
 	border-radius: 0.5rem;
 	box-shadow: 5px 5px 5px whitesmoke;
-	margin-bottom: 1.5rem;
+  padding: 1.5rem;
 }
 
 nav a.router-link-exact-active {
   color: #fbc522;
+}
+.liens-router {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+  align-items: center;
 }
 </style>

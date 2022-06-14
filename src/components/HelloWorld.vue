@@ -1,8 +1,10 @@
 <template>
+<div class="bonjour">
   <div class="hello">
     <h1>{{ msg }}</h1>
-        <img src="images-tete.png" alt="image">
   </div>
+  <img src="images-tete.png" alt="image" class="image-tetes">
+</div>
 </template>
 
 <script>
@@ -15,33 +17,26 @@ export default {
 </script>
 
 <style scoped>
+.bonjour {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 5rem;
+  width: 50%;
+  justify-content: center;
+}
+.hello {
+  justify-content: center;
+}
 h1 {
-    width: 30%;
-    height: auto;
     border-radius: 1rem;
-    background-color: #7C8D5B;
-    margin: auto;
+    background-color: #4E7B7F;
     text-align: center;
+    padding: 0.5rem;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-h1 {
-  font-display: ;
-}
-img {
-  margin: auto;
-  width: 20rem;
+.image-tetes {
+  width: 65rem;
+  border-radius: 2rem;
+  padding: 1rem;
 }
 </style>
