@@ -3,7 +3,7 @@ import { createStore } from 'vuex'
 export default createStore({
   state: {
     columns: [],
-    users: {}
+    users: []
   },
   getters: {
   },
@@ -17,6 +17,12 @@ export default createStore({
     },
     setUsers(state, new_entry){
       state.users=new_entry
+    },
+    deleteUser(state, id){
+      state.users.splice(state.users.findIndex(user => user.id == id), 1);
+    },
+    addUser(state, user) {
+      state.users.push(state.users.findIndex(user => user.id == id),1);
     }
   }
 })

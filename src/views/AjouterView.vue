@@ -1,34 +1,37 @@
 <template>
-    <!-- <router-link :to="{ name: 'modifyUser', params: { id: user.id} }">
-    </router-link> -->
     <div class="formulaire">
         <h2>Ajouter un utilisateur</h2>
-        <form action="valider" class="valider" @submit.prevent="addEntry">
-            <label class="nouvel-utilisateur" v-for="column in allColumns">
+        <form id="addUser" action="ajouter" class="valider" method="post">
+            <label for="newUser" class="nouvel-utilisateur" v-for="column in allColumns">
                 {{column.toUpperCase()}}
-
-                <input type="text" name="" id="input_formulaire"/>
-            </label>    
-            <input type="button" @click="addEntry" value="valider" id="bouton_valider"/>
+                <input type="text" id="input_formulaire" v-model="text"> 
+            </label> 
+            <router-link :to="{name: 'utilisateurs'}">
+                <input type="button" @submit.preventDefault="addUser" value="valider" id="bouton_valider">
+            </router-link>
         </form>
     </div>
 </template>
 
 <script>
-import inputAsObjectMixin from '@/mixins/inputAsObjectMixin';
+
 export default {
     name: 'AjouterView',
     data: function (){
     return {
     data:{},
     allColumns: [],
-    allUsers: {}
+    allUsers: {},
     }
     },
-    mixins: [inputAsObjectMixin],
     beforeMount () {
     this.allColumns=this.$store.state.columns;
     this.allUsers=this.$store.state.users;
+    },
+    methods: {
+        addUser(user) {
+        this.$store.push('addUSer', user);
+        }
     }
 }
 </script>
@@ -38,7 +41,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 50%;
-    align-self: center;
+    margin: auto;
 }
 h2 {
     background-color: #4E7B7F;
@@ -58,7 +61,7 @@ h2 {
     margin: 1.5rem 0;
     text-align: center;
 }
-#bouton-valider {
+#bouton-valider:hover {
     width: 30%;
     height: 40px;
     margin-top: 2rem;

@@ -7,36 +7,4 @@
 </div>
 </template>
 
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
 
-<style scoped>
-.bonjour {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding: 5rem;
-  width: 50%;
-  justify-content: center;
-}
-.hello {
-  justify-content: center;
-}
-h1 {
-    border-radius: 1rem;
-    background-color: #4E7B7F;
-    text-align: center;
-    padding: 0.5rem;
-}
-.image-tetes {
-  width: 65rem;
-  border-radius: 2rem;
-  padding: 1rem;
-}
-</style>

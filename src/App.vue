@@ -1,13 +1,23 @@
 <template>
+  <body>
   <nav>
-    <img alt="Vue logo" src="logo-Id-Formation.png">
-    <div class="liens-router">
-      <router-link to="/">Accueil</router-link> 
-      <router-link to="/utilisateurs">Utilisateurs</router-link> 
-      <router-link to="/ajouter">Ajouter</router-link>
-    </div>
-  </nav>
+      <img alt="Vue logo" src="logo-Id-Formation.png">
+      <div class="liens-router">
+        <router-link to="/">Accueil</router-link> 
+        <router-link to="/utilisateurs">Utilisateurs</router-link> 
+        <router-link to="/ajouter">Ajouter</router-link>
+      </div>
+    </nav>
   <router-view/>
+  </body>
+  <footer>
+    <div class="footer">
+      © 2022-Zerina Maxhuni
+      <div>
+      ID Formation Strasbourg
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -60,7 +70,6 @@ a {
 	box-shadow: 5px 5px 5px whitesmoke;
   padding: 1.5rem;
 }
-
 nav a.router-link-exact-active {
   color: #fbc522;
 }
@@ -69,5 +78,11 @@ nav a.router-link-exact-active {
   justify-content: space-evenly;
   width: 40%;
   align-items: center;
+}
+footer{
+    background: #7C8D5B;
+    text-align: center;
+    margin-top: 2rem;
+    height: 2.5rem;
 }
 </style>

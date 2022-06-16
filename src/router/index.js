@@ -21,12 +21,12 @@ const routes = [
     component: AjouterView
   },
   {
-    path: '/modifier',
+    path: '/modifier:id',
     name: 'modifier',
-    component: ModifierView
+    component: ModifierView,
+    props: true
   }
 ]
-
 const router = createRouter({
   history: createWebHashHistory(),
   routes
