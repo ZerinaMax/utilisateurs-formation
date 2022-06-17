@@ -8,16 +8,13 @@
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'HomeView',
-  components: {
-    HelloWorld
-  }
 }
 </script>
+
 <style scoped>
+@media only screen and (min-width: 1061px) {
 .bonjour {
   display: flex;
   flex-direction: column;
@@ -26,18 +23,26 @@ export default {
   width: 50%;
   justify-content: center;
 }
+
 .hello {
   justify-content: center;
 }
+
 h1 {
-    border-radius: 1rem;
-    background-color: #4E7B7F;
-    text-align: center;
-    padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: #4E7B7F;
+  text-align: center;
+  padding: 0.5rem;
 }
+
 .image-tetes {
   width: 65rem;
   border-radius: 2rem;
   padding: 1rem;
+}
+}
+
+@media only screen and (max-width: 1060px){
+
 }
 </style>

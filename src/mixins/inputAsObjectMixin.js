@@ -1,3 +1,4 @@
+<script>
 export default {
     methods: {
         inputAsObject(column) {
@@ -9,3 +10,4 @@ export default {
         }
     }
 }
+</script>
