@@ -2,9 +2,19 @@
     <div class="formulaire">
         <h2>Ajouter un utilisateur</h2>
         <form id="addUser" action="ajouter" class="valider" method="post">
-            <label for="newUser" class="nouvel-utilisateur" v-for="column in allColumns" :key="column">
-                {{column.toUpperCase()}}
+            <label for="newUser" class="nouvel-utilisateur" v-for="(titre) in allColumns" :key="column">
+                <span>{{titre.toUpperCase()}}</span>
+                <div v-if="info==='address'">
+                    <textarea v-bind:id="info">
+                    </textarea>
+                </div>
+                <div v-else-if="info==='company'">
+                    <textarea v-bind:id="info">
+                    </textarea>
+                </div>
+                <div v-else>
                 <input type="text" id="input_formulaire" v-model="newUser[column]"> 
+                </div>
             </label> 
             <router-link :to="{name: 'utilisateurs'}">
                 <input type="button" @click="addUser()" value="Valider" id="bouton_valider">
@@ -18,6 +28,7 @@ export default {
     name: 'AjouterView',
     data: function (){
     return {
+    allColumns: [],
     newUserInputs: [],
     newUser: {id:this.$store.state.counter},
     newUserDatas: {}

@@ -4,9 +4,22 @@
     </h2>
     <form>
         <div>
-            <label v-for="(key,info) in userDatas" :key="info">
+            <label v-for="(key,info) in userDatas" :key="info" v-bind:for="info">
                 <span>{{info.toUpperCase()}}</span>
-                <input type="text" v-model="userDatas[info]"> 
+                <div v-if="info==='id'">
+                <input type="text"  v-bind:id="info" disabled v-bind:value="info">
+                </div>
+                <div v-else-if="info==='address'"> 
+                    <textarea v-bind:id="info">
+                    </textarea>
+                </div>
+                <div v-else-if="info==='company'">
+                    <textarea v-bind:id="info">
+                    </textarea>
+                </div>
+                <div v-else>
+                    <input type="text" v-bind:id="info" v-bind:value="key">
+                </div> 
             </label>   
             <router-link :to="{name: 'utilisateurs'}">
                 <button class="bouton-modifier" @click="modifyUser(user)">Valider</button>
